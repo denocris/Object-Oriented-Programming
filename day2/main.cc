@@ -4,26 +4,26 @@
 #include <vector>
 #include <string>
 
-struct Point {
+struct Vec_2D {
 	int x;
 	int y;
 };
 
-Point subtract(const Point & a, const Point & b) {
+Vec_2D subtract(const Vec_2D & a, const Vec_2D & b) {
 	return {b.x - a.x, b.y - a.y};
 }
 
-double distTo0(const Point & a) {
+double length(const Vec_2D & a) {
 	return std::sqrt( a.x*a.x + a.y*a.y );
 }
 
-double distance(const Point & a, const Point & b) {
-	return distTo0( subtract(a,b) );
+double distance(const Vec_2D & a, const Vec_2D & b) {
+	return length( subtract(a,b) );
 }
 
 struct DataLine { 
-	Point a;
-	Point b;
+	Vec_2D a;
+	Vec_2D b;
 };
 
 
