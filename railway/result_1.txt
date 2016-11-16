@@ -1,0 +1,6 @@
+Train to Aaa: 507.7 t
+Train to Bbb: 239.7 t
+Train to Ccc: 121.2 t
+Train to Ddd: 629.9 t
+Train to Eee: 761.5 t
+Train to Fff: 276.2 t
