@@ -1,0 +1,35 @@
+#include "aircraft.hh"
+#include "passenger.hh"
+
+
+void Aircraft::give_aircraft_destination(std::string destination){
+    dest_ = destination;
+    status_ = "Ready to Load";
+}
+
+double sum_tot_weight(std::vector<Passenger> luggage){
+		double sum = 0;
+		for (auto lug : luggage){
+			sum += lug.weight;
+		}
+		return sum;
+}
+
+double Aircraft::load_passengers(std::map<std::string,std::vector<Passenger>> dest_schedule, std::string dest){
+	double sum = 0;
+	if (status_ == "Ready to Load"){
+		for (auto i : dest_schedule){
+			if (i.first == dest){
+				sum += sum_tot_weight(i.second);
+			}
+		}
+	weight_ = sum;
+	status_ = "Ready to Depart";
+	}
+	return sum;
+}
+
+void Aircraft::let_aircraft_depart(){
+  if(status_ == "Ready to Depart")
+	std::cout << "It's going to " << dest() << ", with a total weight of" << weight() << "Kg of potatos!" << std::endl;
+}
