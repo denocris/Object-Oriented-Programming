@@ -31,5 +31,5 @@ double Aircraft::load_passengers(std::map<std::string,std::vector<Passenger>> de
 
 void Aircraft::let_aircraft_depart(){
   if(status_ == "Ready to Depart")
-	std::cout << "It's going to " << dest() << ", with a total weight of" << weight() << "Kg of potatos!" << std::endl;
+	std::cout << "Runway 27, Cleared for take off to" << dest() << ", with a total weight of" << weight() << "Kg. Enjoy the flight!" << std::endl;
 }
