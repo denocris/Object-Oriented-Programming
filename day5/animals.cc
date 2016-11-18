@@ -1,5 +1,7 @@
 #include <string>
 #include <iostream>
+#include <memory>
+#include <vector>
 
 namespace Zoo {
 
@@ -105,8 +107,22 @@ bool sameSound(const Animal & a, const Animal & b) {
  	return a.sound() == b.sound();
 }
 
+using AnimalPtr = std::unique_ptr<Animal>;
+using DogPtr = std::unique_ptr<Dog>;
+using CatPtr = std::unique_ptr<Cat>;
 
 
+}
+
+
+Zoo::AnimalPtr makeAnimal(std::string type, std::string name, std::string stuff) {
+	if ( type == "Dog" ) {
+		return Zoo::DogPtr(new Zoo::Dog(name,stuff));
+	}
+	else if ( type == "Cat" ) {
+		return Zoo::CatPtr(new Zoo::Cat(name,stuff));
+	}
+	return nullptr;
 }
 
 
@@ -167,11 +183,23 @@ int main() {
 
 
 
+	std::vector<Zoo::AnimalPtr> vec;
 
+	Zoo::DogPtr dogP(new Zoo::Dog("Pluto","Bone"));
 
+	vec.push_back( std::move(dogP) );
 
+	//std::cout << "Illegal: " << dogP->name() << '\n';
 
+	vec.push_back( makeAnimal("Cat","Tom","Sofa") );
+	
+	vec.push_back(
+	    Zoo::DogPtr(new Zoo::Dog("Barky","Ball"))
+	);
 
+	std::cout << "Loop:\n";
+	for ( const auto & a : vec )
+		std::cout << a->sound() << '\n';
 
 
 
@@ -184,6 +212,8 @@ int main() {
 	// Zoo::Animal cat_copy = catty;
 	// std::cout << dog_copy.sound() << '\n';
 	// std::cout << cat_copy.sound() << '\n';
+
+
 
 
 
