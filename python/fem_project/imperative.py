@@ -180,9 +180,10 @@ if __name__ == "__main__":
 
     deg = 1
 
-    Tk = np.array([0,1])
+    Tk = np.array([0,1]) # reference segment
     Nk = construct_dual_basis()
     Pk = construct_poly(deg)
+
     print Pk
 
     C = construct_cij(Nk,Pk)
@@ -192,9 +193,9 @@ if __name__ == "__main__":
     V = construct_canonical_basis(C)
 
     s = np.linspace(0,1,1025)
-    #for v in V:
-    #    plt.plot(s, v(s))
-    #plt.show()
+    for v in V:
+        plt.plot(s, v(s))
+    plt.show()
 
     import sympy as sym
     t = sym.var('t')
@@ -212,7 +213,7 @@ if __name__ == "__main__":
 
     for n in range(2,3):
 
-        n=n**2+1
+        n=2**n+1
 
         x=np.linspace(0,1,n)
 

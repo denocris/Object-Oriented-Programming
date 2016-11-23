@@ -6,14 +6,15 @@ class Triangulation(object):
         self.__x = np.linspace(0,1,n)
 
     def __init__(self, initial_refinement):
-        self.__global_refinement
+        self.__global_refinement = initial_refinement
         self.discretise()
 
     def get_n_vertices(self):
-        return
+        return len(self.__x)
 
     def get_n_elements(self):
-        return
+        return len(self.__x) -1
 
     def get_vertex_list(self):
-        return 
+        return self.__x 
+

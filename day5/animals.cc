@@ -11,20 +11,34 @@ private:
 	std::string name_;
 
 public:
+<<<<<<< HEAD
 	Animal(std::string name) 
 		: age_(0), name_(name) 
 	{}// std::cout << "Animal constructor for " << name << "!\n";	}
 
 	Animal(const Animal & a) 
 		: age_(a.age_), name_(a.name_) 
+=======
+	Animal(std::string name)
+		: age_(0), name_(name)
+	{}// std::cout << "Animal constructor for " << name << "!\n";	}
+
+	Animal(const Animal & a)
+		: age_(a.age_), name_(a.name_)
+>>>>>>> mod
 	{}// std::cout << "Animal copy constructor for " << a.name() << "!\n";	}
 
 
 
 
 	virtual std::string sound() const
+<<<<<<< HEAD
 	{ 
 	 	return "..."; 
+=======
+	{
+	 	return "...";
+>>>>>>> mod
 	}
 
 
@@ -45,12 +59,21 @@ class Dog : public Animal {
 private:
 	std::string favouriteToy_;
 public:
+<<<<<<< HEAD
 	Dog(std::string name, std::string toy) 
 	    : Animal(name), favouriteToy_(toy) 
 	    {}// std::cout << "Dog constructor for " << name << "!\n";	}
 
 	std::string sound() const { 
 		return "<< bark >>"; 
+=======
+	Dog(std::string name, std::string toy)
+	    : Animal(name), favouriteToy_(toy)
+	    {}// std::cout << "Dog constructor for " << name << "!\n";	}
+
+	std::string sound() const {
+		return "<< bark >>";
+>>>>>>> mod
 	}
 
 	std::string favouriteToy() const { return favouriteToy_; }
@@ -58,23 +81,41 @@ public:
 
 class Crocodile : public Animal {
 public:
+<<<<<<< HEAD
 	Crocodile(std::string name) 
 	    : Animal(name)
 	    {}
 
 	// std::string sound() const { 
 	// 	return "come fa?"; 
+=======
+	Crocodile(std::string name)
+	    : Animal(name)
+	    {}
+
+	// std::string sound() const {
+	// 	return "come fa?";
+>>>>>>> mod
 	// }
 };
 
 class NoisyCrocodile : public Crocodile {
 public:
+<<<<<<< HEAD
 	NoisyCrocodile(std::string name) 
 	    : Crocodile(name)
 	    {}
 
 	std::string sound() const { 
 		return "<< roar >>"; 
+=======
+	NoisyCrocodile(std::string name)
+	    : Crocodile(name)
+	    {}
+
+	std::string sound() const {
+		return "<< roar >>";
+>>>>>>> mod
 	}
 };
 
@@ -84,6 +125,7 @@ class Cat : public Animal {
 private:
 	std::string favouritePlace_;
 public:
+<<<<<<< HEAD
 	Cat(std::string name, std::string place) 
 	    : Animal(name), favouritePlace_(place) 
 	    {}// std::cout << "Cat constructor for " << name << "!\n";	}
@@ -94,6 +136,18 @@ public:
 
 	std::string favouritePlace() const { 
 		return favouritePlace_; 
+=======
+	Cat(std::string name, std::string place)
+	    : Animal(name), favouritePlace_(place)
+	    {}// std::cout << "Cat constructor for " << name << "!\n";	}
+
+	std::string sound() const {
+		return "<< miaow >>";
+	}
+
+	std::string favouritePlace() const {
+		return favouritePlace_;
+>>>>>>> mod
 	}
 };
 
@@ -137,7 +191,11 @@ int main() {
 	// std::cout << bar.name() << ' ' << bar.age() << '\n';
 	// std::cout << bar.favouriteToy() << '\n';
  //    std::cout << "=========\n";
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> mod
 	// Zoo::Cat baz("Tom","Sofa");
 	// std::cout << baz.name() << ' ' << baz.age() << '\n';
 	// baz.birthday();
@@ -147,8 +205,13 @@ int main() {
 	// std::cout << baz.name() << ' ' << baz.age() << '\n';
 	// std::cout << baz.favouritePlace() << '\n';
  //    std::cout << "=========\n";
+<<<<<<< HEAD
 	
 	// std::cout 
+=======
+
+	// std::cout
+>>>>>>> mod
 	// 	<< std::boolalpha
 	// 	<< isYounger(bar, baz) << ' '
 	// 	<< isYounger(baz, bar)
@@ -192,7 +255,11 @@ int main() {
 	//std::cout << "Illegal: " << dogP->name() << '\n';
 
 	vec.push_back( makeAnimal("Cat","Tom","Sofa") );
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> mod
 	vec.push_back(
 	    Zoo::DogPtr(new Zoo::Dog("Barky","Ball"))
 	);
@@ -225,6 +292,7 @@ int main() {
 
 
 void printNameAndSound(const Zoo::Animal & a) {
+<<<<<<< HEAD
 	std::cout 
 		<< a.name() << ' ' 
 		<< a.sound() << '\n';
@@ -232,3 +300,9 @@ void printNameAndSound(const Zoo::Animal & a) {
 
 
 
+=======
+	std::cout
+		<< a.name() << ' '
+		<< a.sound() << '\n';
+}
+>>>>>>> mod

@@ -1,0 +1,10 @@
+pass1 156 A
+pass2 104 B
+pass3 212 A
+pass4 231 A
+pass5 18 A
+pass6 265 A
+pass7 109 C
+pass8 161 B
+pass9 303 Salmone
+pass10 44 Pippo
