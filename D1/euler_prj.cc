@@ -44,17 +44,17 @@ int main(int argc, char const *argv[]) {
 
   int sum = 0;
 
-  # RESULT 21124
+  // RESULT 21124
 
 
     for(int i = 1; i < 20 ; i++){
       sum += euler[i].size();
     }
-
+/*
     for(int i = 20; i < 100; i+=10 )
       for(int j = 1; j < 10; j++){
         sum += euler[i].size() + euler[j].size();
-      }
+      }*/
 
 
 
